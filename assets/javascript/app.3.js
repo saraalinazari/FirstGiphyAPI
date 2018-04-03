@@ -40,13 +40,22 @@ function showPictures(){
             var newPTitle=$("<p>").text("Title: "+result[i].title);
 
             var newLinkDownload=$("<a>");
-            newLinkDownload.attr("href",result[i].embed_url);
-            newLinkDownload.attr("download",result[i].embed_url);
+            newLinkDownload.attr("href",result[i].embed_url);//images.fixed_width_still.url);
+            newLinkDownload.attr("download",result[i].embed_url);//"download");
             newLinkDownload.attr("class","downloadButton btn btn-outline-info");
-         
+          //  newLinkDownload.attr("target","_blank");
             newLinkDownload.text("Download");
 
+            // var newFavoritep=$("<p>");
+            // var newFavoriteBtn = $("<button>");
+            // newFavoriteBtn.attr("class","favoriteBtn");
+            // var newFavoriteImg = $("<img>");
+            // newFavoriteImg.attr("src","assets/images/star.png");
+            // newFavoriteImg.attr("obj",result[i].embed_url);
+            // newFavoriteImg.val(result[i].embed_url); console.log("i: "+i+"result[i]: "+result[i])
             
+            // newFavoriteBtn.append(newFavoriteImg);
+            // newFavoritep.append(newFavoriteBtn);
 
 
 
@@ -56,24 +65,36 @@ function showPictures(){
             animalImg.attr("data-still",result[i].images.fixed_width_still.url);
             animalImg.attr("data-animate",result[i].images.fixed_width.url);
             animalImg.attr("data-state","still");
-            animalImg.attr("class","animalImg rounded ");
+            animalImg.attr("class","animalImg rounded ");//rounded float-left
+           // animalImg.addClass("animalImg");
+           //<a href="/files/download-file.pdf" download="newname" target="_blank" class="et_pb_button" >Download Link</a>
 
            newDivImg.append(animalImg);
            newDivImg.append(newPImg);
            newDivImg.append(newPTitle);
            newDivImg.append(newLinkDownload);
 
+        //    newDivImg.append(newFavoritep); 
 
            $("#show-pictures").append(newDivImg);
-           
+           // $("#show-pictures").append(newPImg);
            
         }
-       
-    });
+       // showButtons();
+    });//showButtons();
 }
 
 function changeAnimationType(){
-
+//     console.log($(event.target).attr("src"));
+// //console.log(img);
+//     var state = $(event.target).attr("data-state");
+//         if (state === "still") {
+//           $(event.target).attr("src", $(event.target).attr("data-animate"));
+//           $(event.target).attr("data-state", "animate");
+//         } else {
+//           $(event.target).attr("src", $(event.target).attr("data-still"));
+//           $(event.target).attr("data-state", "still");
+//         }
 
         var state = $(this).attr("data-state");
         if (state === "still") {
@@ -96,12 +117,32 @@ function showUserAnimal(){
     showButtons();
 }
 
+// function showFavorites(){
+//     var result=$(this).val();//.attr("obj");
+//     console.log(result);
+//     // var newDivFavImg=$("<div>");
+//     // var animalImg = $("<img>");
+//     //         animalImg.attr("src" , result.images.fixed_width_still.url);
+//     //         animalImg.attr("data-still",result.images.fixed_width_still.url);
+//     //         animalImg.attr("data-animate",result.images.fixed_width.url);
+//     //         animalImg.attr("data-state","still");
+//     //         animalImg.attr("class","favoriteImg rounded");
+//     // newDivFavImg.append(animalImg);
 
+
+// }
+ //$(document).ready(function(){
      showButtons();
     $(document).on("click",".animals",showPictures );
     $(document).on("click",".animalImg",changeAnimationType );
-  
+  //  $("#show-pictures").bind("click",changeAnimationType);
+  // $(document).bind("click","#show-pictures",changeAnimationType);
   $(document).on("click","#add-animal", showUserAnimal);
   $(".downloadButton").click(function(){
-    
+    // var href = $('.downloadLink').attr('href');
+    // window.location.href = href;
    });
+//    $(document).on("click",".favoriteBtn",showFavorites);
+//  //showButtons();
+// //   });
+// $(document).on("click",".favoriteImg", changeAnimationType);
