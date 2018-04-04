@@ -64,7 +64,7 @@ function showPictures(){
            newDivImg.append(newLinkDownload);
 
 
-           $("#show-pictures").append(newDivImg);
+           $("#show-pictures").prepend(newDivImg);
            
            
         }
@@ -102,6 +102,4 @@ function showUserAnimal(){
     $(document).on("click",".animalImg",changeAnimationType );
   
   $(document).on("click","#add-animal", showUserAnimal);
-  $(".downloadButton").click(function(){
-    
-   });
+ // $(".downloadButton").on("click",function(){});
