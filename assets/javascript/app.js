@@ -39,12 +39,12 @@ function showPictures(){
             var newPImg = $("<p>").text("Rating: "+result[i].rating);
             var newPTitle=$("<p>").text("Title: "+result[i].title);
 
-            var newLinkDownload=$("<a>");
-            newLinkDownload.attr("href",result[i].embed_url);
-            newLinkDownload.attr("download",result[i].embed_url);
-            newLinkDownload.attr("class","downloadButton btn btn-outline-info");
+            // var newLinkDownload=$("<a>");
+            // newLinkDownload.attr("href",result[i].embed_url);
+            // newLinkDownload.attr("download",result[i].embed_url);
+            // newLinkDownload.attr("class","downloadButton btn btn-outline-info");
          
-            newLinkDownload.text("Download");
+            // newLinkDownload.text("Download");
 
             
 
@@ -61,7 +61,7 @@ function showPictures(){
            newDivImg.append(animalImg);
            newDivImg.append(newPImg);
            newDivImg.append(newPTitle);
-           newDivImg.append(newLinkDownload);
+        //    newDivImg.append(ssssssssnewLinkDownload);
 
 
            $("#show-pictures").prepend(newDivImg);
